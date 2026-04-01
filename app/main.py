@@ -7,6 +7,11 @@ from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
+import sys
+import os
+
+# Ensure the 'app' directory is in the Python path so Vercel can find 'core', 'models', etc.
+sys.path.insert(0, os.path.dirname(__file__))
 
 from core.config import settings
 from core.database import init_db
