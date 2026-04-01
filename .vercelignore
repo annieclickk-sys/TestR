@@ -1,0 +1,12 @@
+.env
+.venv/
+.venv_mac_temp/
+.venv_mac_test/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+app/seed_out.txt
+app/gcs-credentials.json
+.git/
+.agent/

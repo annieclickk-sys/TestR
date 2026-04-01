@@ -26,7 +26,8 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="TestR API", lifespan=lifespan)
 
 # Mount static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+import os
+app.mount("/static", StaticFiles(directory=os.path.join(os.path.dirname(__file__), "static")), name="static")
 
 # CORS middleware
 if settings.APP_ENV == "development":
